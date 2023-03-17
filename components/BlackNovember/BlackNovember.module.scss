@@ -1,0 +1,9 @@
+@import "../../styles/breakpoints.scss";
+
+.section {
+  margin-top: 32px;
+
+  @include breakpoint(lg) {
+    margin-top: 58px;
+  }
+}

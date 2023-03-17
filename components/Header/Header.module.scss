@@ -1,0 +1,169 @@
+@import "../../styles/colors.scss";
+@import "../../styles/constants.scss";
+@import "../../styles/breakpoints.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .offer {
+    @extend %flex-center;
+    background-color: $dark-blue;
+    height: 40px;
+
+    p {
+      color: $white;
+      font-size: 14px;
+    }
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    background-color: $white;
+    padding: 0 20px;
+
+    @include breakpoint(md) {
+      height: 100px;
+      padding: 0 80px;
+    }
+
+    @include breakpoint(md) {
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .vendor {
+      @extend %flex-center;
+      justify-content: flex-start;
+      flex-basis: 20%;
+      display: none;
+
+      @include breakpoint(md) {
+        display: flex;
+      }
+
+      p {
+        margin-left: 5px;
+      }
+    }
+
+    .searchBar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid $light-gray;
+      border-radius: 15px;
+      overflow: hidden;
+      padding: 12px 24px;
+      width: 100%;
+
+      @include breakpoint(md) {
+        height: 54px;
+        padding: 16px 32px;
+        flex-basis: 50%;
+      }
+
+      input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 14px;
+
+        @include breakpoint(md) {
+          font-size: 16px;
+        }
+
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
+
+      img {
+        cursor: pointer;
+      }
+    }
+
+    .tools {
+      @extend %flex-center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      width: 100%;
+      margin: 20px 0;
+      flex-basis: 20%;
+
+      div:first-child {
+        @extend %flex-center;
+        gap: 24px;
+      }
+
+      @include breakpoint(md) {
+        flex-direction: row;
+        justify-content: flex-end;
+        margin: 0;
+
+        .menuIcon {
+          display: none;
+        }
+      }
+
+      .language {
+        color: $dark-blue;
+        cursor: pointer;
+        display: none;
+
+        @include breakpoint(md) {
+          display: block;
+        }
+      }
+
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+
+  nav {
+    height: 45px;
+    background-color: $dark-blak;
+    display: none;
+
+    @include breakpoint(md) {
+      display: block;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 23px;
+      list-style: none;
+      margin: 0;
+      height: 100%;
+      padding: 0 16px;
+
+      @include breakpoint(xl) {
+        gap: 56px;
+        padding: 0 24px;
+      }
+
+      .menuItem {
+        color: $white;
+        transition: 0.3s;
+
+        &:hover {
+          color: $active;
+        }
+
+        &.active {
+          color: $active;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "../../styles/breakpoints.scss";
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 0 20px;
+  margin: 40px 0;
+
+  @include breakpoint(md) {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 82px;
+    margin: 40px 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

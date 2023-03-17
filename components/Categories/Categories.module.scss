@@ -1,0 +1,81 @@
+@import "../../styles/breakpoints.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/constants.scss";
+
+.container {
+  padding: 0 20px;
+  margin-top: 12px;
+
+  @include breakpoint(md) {
+    padding: 0 82px;
+    margin-top: 0;
+  }
+
+  .title {
+    font-size: 24px;
+    color: $dark-blue;
+    font-weight: bold;
+
+    @include breakpoint(md) {
+      font-size: 30px;
+    }
+  }
+
+  .items {
+    @extend %flex-center;
+    justify-content: space-around;
+
+    ul {
+      @extend %flex-center;
+      justify-content: flex-start;
+      list-style: none;
+      gap: 30px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      padding: 0;
+
+      @include breakpoint(md) {
+        gap: 60px;
+        padding: 0 20px;
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      li {
+        @extend %flex-center;
+        flex-direction: column;
+        cursor: pointer;
+
+        p {
+          margin-top: 16px;
+
+          @include breakpoint(md) {
+            font-weight: 600;
+            font-size: 20px;
+          }
+        }
+
+        img {
+          width: 100px;
+          height: 100px;
+
+          @include breakpoint(md) {
+            width: 140px;
+            height: 140px;
+          }
+        }
+      }
+    }
+
+    .navigation {
+      cursor: pointer;
+      display: none;
+
+      @include breakpoint(md) {
+        display: block;
+      }
+    }
+  }
+}

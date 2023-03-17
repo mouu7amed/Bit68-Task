@@ -1,0 +1,75 @@
+@import "../../styles/breakpoints.scss";
+
+.container {
+  position: relative;
+  margin-top: 24px;
+
+  @include breakpoint(md) {
+    margin-top: 0;
+  }
+
+  .sliderImg {
+    width: 100%;
+    min-height: 200px;
+    object-fit: fill;
+  }
+
+  .arrowRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 48px;
+    cursor: pointer;
+    display: none;
+
+    @include breakpoint(md) {
+      display: block;
+    }
+  }
+
+  .arrowLeft {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 48px;
+    cursor: pointer;
+    display: none;
+
+    @include breakpoint(md) {
+      display: block;
+    }
+  }
+
+  .BulletLgIcon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    display: none;
+
+    @include breakpoint(md) {
+      display: block;
+    }
+  }
+
+  .BulletSmIcon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+}

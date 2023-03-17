@@ -1,0 +1,152 @@
+@import "../../styles/colors.scss";
+@import "../../styles/constants.scss";
+@import "../../styles/breakpoints.scss";
+
+.container {
+  position: relative;
+
+  .holder {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin-top: 32px;
+    overflow: hidden;
+
+    @include breakpoint(lg) {
+      flex-direction: row;
+      margin-top: 58px;
+    }
+
+    .texts {
+      @extend %flex-center;
+      flex-direction: column;
+      flex: 1;
+      background-color: $milky-tea;
+      min-height: 300px;
+      padding: 32px;
+      width: 100%;
+
+      @include breakpoint(xs) {
+        min-height: 200px;
+      }
+
+      p {
+        &:first-of-type {
+          font-weight: 900;
+          font-size: 30px;
+          line-height: 1;
+
+          @include breakpoint(xs) {
+            font-size: 21px;
+            font-weight: 800;
+          }
+        }
+
+        &:last-of-type {
+          font-size: 18px;
+          font-weight: 700;
+
+          @include breakpoint(xs) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 52px;
+        font-weight: 900;
+        line-height: 1;
+
+        @include breakpoint(xs) {
+          font-size: 32px;
+        }
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 21px;
+        font-weight: 800;
+
+        @include breakpoint(xs) {
+          font-size: 18px;
+        }
+
+        span {
+          text-decoration: underline;
+        }
+      }
+
+      button {
+        background-color: $blue;
+        color: $white;
+        padding: 8px 16px;
+        width: 150px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        height: 37px;
+        cursor: pointer;
+        margin-top: 8px;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: darken($blue, 8%);
+        }
+      }
+    }
+
+    .arrowRight {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 48px;
+      cursor: pointer;
+      display: none;
+
+      @include breakpoint(lg) {
+        display: block;
+      }
+    }
+
+    .arrowLeft {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 48px;
+      cursor: pointer;
+      display: none;
+
+      @include breakpoint(lg) {
+        display: block;
+      }
+    }
+
+    .image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      max-height: 300px;
+      flex: 1;
+    }
+  }
+
+  .BulletLgIcon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    display: none;
+
+    @include breakpoint(lg) {
+      display: block;
+    }
+  }
+}
